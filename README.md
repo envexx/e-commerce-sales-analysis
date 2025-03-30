@@ -17,10 +17,12 @@ This project analyzes online retail sales data to uncover business insights and 
 
 ## Data Sources
 
-The analysis utilizes multiple retail datasets:
-- Online Retail dataset (online_retail.xlsx) - Historical transactional data
-- Online Retail II dataset (online_retail_II.csv) - Extended transaction records
-- E-commerce dataset (e_commerce_data.csv) - Supplementary sales data
+The analysis utilizes multiple retail datasets obtained from public sources:
+- Online Retail dataset (online_retail.xlsx) - Historical transactional data from the UCI Machine Learning Repository (https://archive.ics.uci.edu/ml/datasets/Online+Retail)
+- Online Retail II dataset (online_retail_II.csv) - Extended transaction records also from UCI
+- E-commerce dataset (e_commerce_data.csv) - Supplementary sales data from Kaggle
+
+> **Note**: The original datasets are publicly available from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Online+Retail) and [Kaggle](https://www.kaggle.com). Due to file size limitations, these datasets are not included in this repository. Please download them from the original sources and place them in the `data/raw/` directory to replicate this analysis.
 
 Each dataset contains information about transactions, including:
 - Invoice details (date, number)
@@ -38,65 +40,67 @@ The analysis followed these key steps:
 4. **Exploratory Analysis**: Identifying trends, patterns and insights across various dimensions
 5. **Visualization**: Creating informative charts and dashboards for business stakeholders
 
-![Top Products by Revenue](visualizations/top_products.png)
+![Sales by Day of Week](visualizations/sales_by_day.png)
 
 ## Key Findings
 
 ### Sales Performance
 
-- Total revenue: $X,XXX,XXX.XX
-- Number of unique transactions: XX,XXX
-- Average order value: $XX.XX
+- Total revenue reached a peak of over 3 million in November 2011
+- Significant growth began in November 2010, with consistent sales thereafter
+- Average monthly sales of approximately 1.5 million after initial growth period
 
 ### Temporal Patterns
 
-- Highest sales month: December, with XX% of annual revenue
-- Sales demonstrate strong seasonality with peaks during holiday periods
-- Weekday sales outperform weekend sales by XX%
+- Highest sales month: November 2011
+- Clear seasonality with Q4 (Oct-Dec) showing higher sales volumes
+- Weekday sales pattern shows Tuesday and Thursday as strongest sales days
+- Weekend sales significantly lower, with Sunday showing the lowest performance at around 1.6 million in total sales
+- Saturday shows minimal sales activity
 
 ### Product Analysis
 
-- Top 10 products account for XX% of total revenue
-- Product category X has the highest profit margin at XX%
-- Complementary product purchases identified in X% of transactions
+- Top product by revenue: DOTCOM POSTAGE with approximately 400,000 in revenue
+- REGENCY CAKESTAND 3 TIER ranks second with about 350,000 in revenue
+- PAPER CRAFT, LITTLE BIRDIE ranks third with approximately 325,000
+- Top 3 products generate significantly more revenue than other items
+- Specialized decorative items dominate the top-selling products
 
 ### Geographic Insights
 
-- Top market: United Kingdom, representing XX% of total sales
-- Fastest growing market: Netherlands, with XX% YoY growth
-- International markets show unique product preferences and purchase patterns
+- Dominant market: United Kingdom, representing approximately 18 million in sales
+- The UK market is substantially larger than all other markets combined
+- Secondary markets include Netherlands, EIRE (Ireland), and Germany, each with less than 1 million in sales
+- The top 10 countries show a sharp decline in sales after the UK, indicating heavy market concentration
+- European countries dominate the top markets list
 
-### Customer Behavior
-
-- XX% of revenue comes from returning customers
-- Customer retention rate: XX%
-- Average customer makes X.X purchases annually
-
-![Sales by Country](visualizations/top_countries.png)
+![Top Countries by Sales](visualizations/top_countries.png)
 
 ## Business Recommendations
 
 Based on the analysis, we recommend the following strategies:
 
 1. **Product Portfolio Optimization**
-   - Increase inventory of top-performing products, especially before peak seasons
-   - Consider discontinuing the bottom 15% of products by revenue and margin
-   - Develop bundle offerings based on frequently co-purchased items
+   - Increase inventory of top-performing products, especially DOTCOM POSTAGE and REGENCY CAKESTAND 3 TIER
+   - Develop complementary products to the top performers
+   - Evaluate low-performing products for potential discontinuation
 
 2. **Market Development**
-   - Intensify marketing in high-potential markets like Netherlands and Germany
-   - Customize product offerings to regional preferences
-   - Consider localized promotions based on country-specific buying patterns
+   - Maintain strong focus on the UK market as the primary revenue source
+   - Develop targeted marketing campaigns for Netherlands, Ireland, and Germany to increase market share
+   - Investigate reasons for low penetration in other European markets that show potential
 
-3. **Customer Retention**
-   - Implement loyalty program targeting the identified high-value customer segments
-   - Develop re-engagement campaigns for customers showing decreased purchase frequency
-   - Create personalized recommendations based on purchase history
+3. **Seasonal Strategy**
+   - Plan inventory increases for Q4, especially October-November
+   - Develop promotions to boost December sales, which show a decline after November peak
+   - Create counter-seasonal products and promotions to balance revenue in slower months
 
-4. **Seasonal Strategy**
-   - Plan inventory increases of XX% ahead of identified peak seasons
-   - Develop counter-seasonal products to balance revenue throughout the year
-   - Adjust marketing spend to capitalize on high-conversion periods
+4. **Day-of-Week Optimization**
+   - Concentrate marketing efforts and promotions on Tuesday and Thursday to capitalize on peak shopping days
+   - Develop special weekend promotions to increase Saturday and Sunday sales
+   - Optimize staffing and operations to align with weekly sales patterns
+
+![Top Products by Revenue](visualizations/top_products.png)
 
 ## Technical Implementation
 
@@ -149,14 +153,15 @@ pip install pandas numpy matplotlib seaborn jupyter
 
 ### Running the Analysis
 
-1. Place raw data files in `data/raw/` directory
-2. Run the main analysis pipeline:
+1. Download original datasets from UCI Machine Learning Repository and Kaggle
+2. Place raw data files in `data/raw/` directory
+3. Run the main analysis pipeline:
    ```bash
    python main.py
    ```
-3. View generated reports in `reports/` directory
-4. Explore visualizations in `visualizations/` directory
-5. For interactive analysis, open the Jupyter notebook:
+4. View generated reports in `reports/` directory
+5. Explore visualizations in `visualizations/` directory
+6. For interactive analysis, open the Jupyter notebook:
    ```bash
    jupyter notebook sales_analysis.ipynb
    ```
@@ -174,7 +179,7 @@ pip install pandas numpy matplotlib seaborn jupyter
 
 For questions or feedback, please contact:
 
-[Your Name] - [your.email@example.com]
+[Nugrah Salam] - [ompekp@gmail.com]
 
 ---
 
